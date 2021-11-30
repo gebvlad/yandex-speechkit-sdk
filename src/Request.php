@@ -36,7 +36,7 @@ class Request
         if ($headers !== [])
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-        if (!is_null($data))
+        if (!is_null((string)$data))
             if (is_file(realpath($data))) {
                 $file = fopen($data, 'rb');
 
