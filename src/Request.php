@@ -37,7 +37,7 @@ class Request
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         if (!is_null($data))
-            if (is_file((string)realpath($data))) {
+            if (is_file(realpath((string)$data))) {
                 $file = fopen($data, 'rb');
 
                 curl_setopt($ch, CURLOPT_INFILE, $file);
